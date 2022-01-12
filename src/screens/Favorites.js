@@ -1,9 +1,7 @@
 import React from 'react';
 import { View, Text, Button, SafeAreaView } from 'react-native';
 
-const Home = (props) => {
-  console.log(props);
-
+const Favorites = (props) => {
   const { navigation } = props;
 
   const goToSettings = () => {
@@ -12,7 +10,7 @@ const Home = (props) => {
 
   return (
     <SafeAreaView>
-      <Text>HOME SCREEN</Text>
+      <Text>Favorites SCREEN</Text>
       <Button
         title="IR A SETTINGS"
         onPress={() => {
@@ -23,4 +21,4 @@ const Home = (props) => {
   );
 };
 
-export default Home;
+export default Favorites;
