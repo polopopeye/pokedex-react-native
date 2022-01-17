@@ -2,14 +2,13 @@ import React from 'react';
 import { Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Account from '../screens/Account';
-import Favorites from '../screens/Favorites';
-import Pokedex from '../screens/Pokedex';
-
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+import FavoriteNavigation from './FavoriteNavigation';
+import PokedexNavigation from './PokedexNavigation';
+import AccountNavigation from './AccountNavigation';
+
 const Tab = createBottomTabNavigator();
-// import { HeartIcon } from '@heroicons/react/solid';
 
 const renderPokeBall = () => {
   return (
@@ -22,10 +21,10 @@ const renderPokeBall = () => {
 
 const NavigationTab = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
-        name="Account"
-        component={Account}
+        name="AccountNavigation"
+        component={AccountNavigation}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person" size={size} color={color} />
@@ -35,8 +34,8 @@ const NavigationTab = () => {
         }}
       ></Tab.Screen>
       <Tab.Screen
-        name="Pokedex"
-        component={Pokedex}
+        name="PokedexNavigation"
+        component={PokedexNavigation}
         options={{
           tabBarLabel: '',
           tabBarIcon: () => renderPokeBall(),
@@ -45,8 +44,8 @@ const NavigationTab = () => {
         }}
       ></Tab.Screen>
       <Tab.Screen
-        name="Favorites"
-        component={Favorites}
+        name="FavoriteNavigation"
+        component={FavoriteNavigation}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="heart" size={size} color={color} />
